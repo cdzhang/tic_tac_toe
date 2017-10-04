@@ -1,0 +1,6 @@
+.DS_store
+__pycache__
+dic_next.txt
+state_action_pairs.txt
+Q_table.txt
+MLPClassifier.sav
