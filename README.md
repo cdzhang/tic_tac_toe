@@ -36,6 +36,7 @@ gets the status of the board
 ## minimax and alpha beta pruning
 
 ###minmax
+
 Suppose I am a player, my goal is to win the game, or get score 1. When I have different choices of actions, the saftest thought is compare the worst (minimum) score of each choices, and choose the largest one. When my opponent thinks similarly, he will choose the action that minimize my maximum score. 
 
 
@@ -91,6 +92,7 @@ After training many times, ```q_learn_ai(board,player)``` returns the next move 
 
 
 ##Summary
+
 This code provides the following AIs to decide next move in tic tac toe game.
 
 + ```random_ai(board,player)```
