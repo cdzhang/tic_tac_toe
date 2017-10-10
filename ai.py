@@ -133,8 +133,9 @@ def get_pairs_if_not_exist(pair_file='state_action_pairs.txt',times=100000):
                     board = [b0,b1,b2]
                     sa = gen_state_action_pair(board,player)
                     sa = [str(sai) for sai in sa]
+                    dic[state] = sa
                     f.write(','.join(sa)+'\n')
-def get_clf(pair_file='state_action_pairs',times=100000):
+def get_clf(pair_file='state_action_pairs.txt',times=100000):
     get_pairs_if_not_exist()
     model_file = "MLPClassifier.sav"
     if not os.path.isfile(model_file):
@@ -142,12 +143,11 @@ def get_clf(pair_file='state_action_pairs',times=100000):
         df = pd.read_csv('state_action_pairs.txt',names=['p0','p1','p2','p3','p4','p5','p6','p7','p8','player','k'])
         x = df[['p0','p1','p2','p3','p4','p5','p6','p7','p8','player']]
         y = df['k']
-        clf = MLPClassifier(hidden_layer_sizes=(100,100),max_iter=2000,alpha=0.0001)
+        clf = MLPClassifier(hidden_layer_sizes=(100,100),max_iter=2000,alpha=0.01)
         clf.fit(x,y)
         joblib.dump(clf,model_file)
     clf = joblib.load(model_file)
     return clf
-
 
 clf = get_clf()
 
@@ -312,7 +312,7 @@ class qvalues:
         return self.qvs.get(a,0)
     def __str__(self):
         return str(self.qvs)
-        
+
 def retrieve_max_action_q(state):
     if state in Q_table:
         qv = Q_table[state]
