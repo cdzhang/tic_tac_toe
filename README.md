@@ -34,11 +34,8 @@ gets the status of the board
 
 
 ## minimax and alpha beta pruning
-
-###minmax
-
+### minmax
 Suppose I am a player, my goal is to win the game, or get score 1. When I have different choices of actions, the saftest thought is compare the worst (minimum) score of each choices, and choose the largest one. When my opponent thinks similarly, he will choose the action that minimize my maximum score. 
-
 
 ### alpha beta prunning
 In tic tac toe, we can try every possible actions. However, we don't need to. When it's my turn, and I found that one action will give me socre 1, I will select this action and don't need to consider the other options. Similary, when it is my opponent's turn, he found an action that will make my score -1, he doesn't need to consider other options any more.
@@ -49,8 +46,7 @@ In tic tac toe, we can try every possible actions. However, we don't need to. Wh
 A policy is to map a state (board & player) to action. DL network is used to predict action from state.
 state[p0,p1,p2,p3,p4,p5,p6,p7,p8,player]->action 0-8
 
-
-####Data Acquisition
+#### Data Acquisition
 + 100,000 games played by two random AIs.
 + Select one random state from one game
 + For each state, ask alpha\_beta\_ai what the next action is.
@@ -91,7 +87,7 @@ When RL ai makes a move, it immediately wins, then the reward is 1; when opponen
 After training many times, ```q_learn_ai(board,player)``` returns the next move decided by the RL given the board state and player.
 
 
-##Summary
+## Summary
 
 This code provides the following AIs to decide next move in tic tac toe game.
 
