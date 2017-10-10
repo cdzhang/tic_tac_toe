@@ -1,5 +1,13 @@
 # tic tac toe examples
-This is an example of using *alpha beta prunning*, *Deep Learning*, *MCTS search* and *Reinforcement Learning* methods to solve tic tac toe game
+This is an example of using 
+
++ *alpha beta prunning*
++ *Deep Learning*
++ *MCTS search* and 
++ *Reinforcement Learning* 
+
+
+methods to solve tic tac toe game
 ## Introduction to tic tac toe
 Tic Tac Toe is 3x3 board game where player 0 and player 1 sequentially place 'O' and 'X' in one of the empty slots. When 3 'O's or 'X's align horizontally, vertically or diagonally, the corresponding player wins immediately.
 
@@ -9,6 +17,7 @@ This is a zero-sum game. Suppose winning will get score 1, lose -1 and tie will 
 **My opponent tries to maximize his score is equivalent to minimize my score.**
 
 ## Game environment
+
 board is 3*3 array. ```get_status(board)```
 gets the status of the board
 
@@ -25,7 +34,8 @@ gets the status of the board
 
 
 ## minimax and alpha beta pruning
-###minmax 
+
+###minmax
 Suppose I am a player, my goal is to win the game, or get score 1. When I have different choices of actions, the saftest thought is compare the worst (minimum) score of each choices, and choose the largest one. When my opponent thinks similarly, he will choose the action that minimize my maximum score. 
 
 
@@ -37,6 +47,7 @@ In tic tac toe, we can try every possible actions. However, we don't need to. Wh
 ## Policy Deep Learning
 A policy is to map a state (board & player) to action. DL network is used to predict action from state.
 state[p0,p1,p2,p3,p4,p5,p6,p7,p8,player]->action 0-8
+
 
 ####Data Acquisition
 + 100,000 games played by two random AIs.
@@ -77,6 +88,7 @@ The ```q_learn_episode(opponent_ai,alpha=0.5,epsilon=0.5,gamma=0.9)``` function 
 When RL ai makes a move, it immediately wins, then the reward is 1; when opponent makes a move and it immediately loses, the reward is -1, otherwise the reward is 0.
 
 After training many times, ```q_learn_ai(board,player)``` returns the next move decided by the RL given the board state and player.
+
 
 ##Summary
 This code provides the following AIs to decide next move in tic tac toe game.
