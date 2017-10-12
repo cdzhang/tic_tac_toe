@@ -170,7 +170,7 @@ def get_name(function):
     return str(function).split()[1]
 if __name__ == '__main__':
     from ai import *
-    ais = [alpha_beta_ai,policy_ai,UCT,UCT_policy_ai,random_ai]
+    ais = [alpha_beta_ai,policy_ai,UCT_ai,UCT_policy_ai,random_ai]
     for i in range(len(ais)):
         namei = get_name(ais[i])
         for j in range(i+1,len(ais)):
