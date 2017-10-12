@@ -4,3 +4,4 @@ Q_table.txt
 state_action_pairs.txt
 MLPClassifier.sav
 __pycache__
+nohup.out
