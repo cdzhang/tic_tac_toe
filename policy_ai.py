@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import os
 from frame import *
+from random_ai import random_ai
+from alpha_beta_ai import *
 
 def sample_state():
     '''
@@ -60,6 +62,7 @@ def get_pairs_if_not_exist(pair_file='state_action_pairs.txt',times=100000):
                     sa = [str(sai) for sai in sa]
                     dic[state] = sa
                     f.write(','.join(sa)+'\n')
+
 def get_clf(pair_file='state_action_pairs.txt',times=100000):
     get_pairs_if_not_exist()
     model_file = "MLPClassifier.sav"

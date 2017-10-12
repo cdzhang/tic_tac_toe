@@ -1,5 +1,7 @@
 from frame import *
 import os
+import numpy as np
+Q_table = {}
 def save_Q_table(file='Q_table.txt'):
     with open(file,'w') as f:
         for key,value in Q_table.items():
